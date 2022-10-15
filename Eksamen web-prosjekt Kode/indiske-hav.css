@@ -1,0 +1,530 @@
+html,body{
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Dette er containeren som inneholder bakgrunnen */
+    /* Alle bildene ligger også i denne i HTML*/
+#container {
+    position: relative;
+    height: 100%;
+    background-color: rgb(9,18,121);
+    background: linear-gradient(180deg, rgba(3,247,234,1) 3%, rgba(255,255,255,1) 54%, rgba(3,247,234,1) 55%, rgba(78,89,226,1) 73%, rgba(25,38,180,1) 83%, rgba(9,18,122,1) 91%);
+    overflow: hidden;
+}
+
+/* Overskrift / Velkomst */
+h1 {
+    font-size: 35px;
+    font-family: fantasy;
+}
+
+/* Introduksjon */
+h2 {
+    font-size: 17px;
+    font-family: fantasy;
+}
+
+/* Sola laget som en boks med "border-radius" */
+#sun {
+    background: rgb(247,242,3);
+    background: linear-gradient(180deg, rgba(247,242,3,1) 75%, rgba(255,117,0,1) 97%);
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    animation: pulse;
+    animation-name: pulse-sun;
+    animation-duration: 3500ms;
+    animation-iteration-count: infinite;
+}
+
+/* Animasjon som gjør at sola pulserer */
+@keyframes pulse-sun {
+    0% {
+        width: 100px;
+        height: 100px;
+    }
+    50% {
+        width: 110px;
+        height: 110px;
+    }
+    100% {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Under her ligger bildene av skyene */
+#skies-img {
+    position: absolute;
+    width: 500px;
+    left: 65%;
+    top: 8%;
+    animation: running;
+    animation-name: flow;
+    animation-duration: 45s;
+    animation-iteration-count: infinite;
+}
+#skies-img2 {
+    position: absolute;
+    width: 350px;
+    left: 75%;
+    top: 14%;
+    animation: running;
+    animation-name: flow2;
+    animation-duration: 45s;
+    animation-iteration-count: infinite;
+}
+#skies-img3 {
+    position: absolute;
+    width: 425px;
+    left: 60%;
+    top: 8%;
+    animation: running;
+    animation-name: flow3;
+    animation-duration: 45s;
+    animation-iteration-count: infinite;
+}
+
+/* Dette er animasjonene som gjør at skyene flytter på seg */
+@keyframes flow {
+    0% {
+        left: 65%;
+        top: 8%;
+    }
+    50% {
+        left: 45%;
+        top: 8%;
+    }
+    100% {
+        left: 65%;
+        top: 8%;
+    }
+}
+@keyframes flow2 {
+    0% {
+        left: 75%;
+        top: 14%;
+    }
+    50% {
+        left: 55%;
+        top: 14%;
+    }
+    100% {
+        left: 75%;
+        top: 14%;
+    }
+}
+@keyframes flow3 {
+    0% {
+        left: 60%;
+        top: 8%;
+    }
+    50% {
+        left: 40%;
+        top: 8%;
+    }
+    100% {
+        left: 60%;
+        top: 8%;
+    }
+}
+
+
+/* Bildet av båten */
+#boat-img {
+    position: absolute;
+    transform: scaleX(-1);
+    width: 250px;
+    top: 28%;
+    left: 40%;
+    animation: running;
+    animation-name: drive;
+    animation-duration: 5s;
+    z-index: 2;
+}
+
+/* Animasjonen som gjør at båten kommer kjørende inn */
+@keyframes drive {
+    0% {
+        left: 2%;
+    }
+    100% {
+        left: 40%;
+    }
+}
+
+/* Her ligger bildene av alle fiskene */
+#fish-img {
+    position: absolute;
+    width: 40px;
+    top: 65%;
+    left: 80%;
+    animation: running;
+    animation-name: swim;
+    animation-duration: 12s;
+    animation-iteration-count: infinite;
+}
+#fish-img2 {
+    position: absolute;
+    width: 40px;
+    top: 67%;
+    left: 75%;
+    animation: running;
+    animation-name: swim2;
+    animation-duration: 11s;
+    animation-iteration-count: infinite;
+}
+#goldfish-img {
+    position: absolute;
+    width: 75px;
+    top: 75%;
+    left: 40%; 
+    transform: scaleX(-1);
+    animation: running;
+    animation-name: swim3;
+    animation-duration: 14s;
+    animation-iteration-count: infinite;
+}
+#goldfish-img2 {
+    position: absolute;
+    width: 75px;
+    top: 70%;
+    left: 35%; 
+    transform: scaleX(-1);
+    animation: running;
+    animation-name: swim4;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+#goldfish-img3 {
+    position: absolute;
+    width: 75px;
+    top: 75%;
+    left: 33%; 
+    transform: scaleX(-1);
+    animation: running;
+    animation-name: swim5;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+}
+#goldfish-img4 {
+    position: absolute;
+    width: 45px;
+    top: 90%;
+    left: 5%;
+    transform: scaleX(-1);
+    animation: running;
+    animation-name: swim6;
+    animation-duration: 6500ms;
+    animation-iteration-count: infinite;
+}
+
+/* Animasjonene på fiskene */
+@keyframes swim {
+    0% {
+        top: 65%;
+        left: 80%;
+    }
+    18% {
+        opacity: 1;
+    }
+    19% {
+        opacity: 0;
+    }
+    50% {
+        top: 55%;
+        left: 35%;
+        transform: scaleX(1)
+    }
+    51% {
+        top: 55%;
+        left: 35%;
+        transform: scaleX(-1);
+    }
+    55% {
+        opacity: 1;
+    }
+    56% {
+        opacity: 0;
+    }
+    100% {
+        top: 65%;
+        left: 80%;
+        transform: scaleX(-1);
+    }
+}
+@keyframes swim2 {
+    0% {
+        top: 67%;
+        left: 75%;
+    }
+    50% {
+        top: 80%;
+        left: 25%;
+        transform: scaleX(1);
+    }
+    51% {
+        top: 80%;
+        left: 25%;
+        transform: scaleX(-1);
+    }
+    100% {
+        top: 67%;
+        left: 75%;
+        transform: scaleX(-1);
+    }
+}
+@keyframes swim3 {
+    0% {
+        top: 75%;
+        left: 40%;
+        transform: scaleX(1);
+    }
+    50% {
+        top: 85%;
+        left: 10%;
+        transform: scaleX(1);
+    }
+    51% {
+        top: 85%;
+        left: 10%;
+        transform: scaleX(-1);
+    }
+    100% {
+        top: 75%;
+        left: 40%;
+        transform: scaleX(-1);
+    }
+}
+@keyframes swim4 {
+    0% {
+        top: 70%;
+        left: 35%;
+        transform: scaleX(-1);
+    }
+    50% {
+        top: 55%;
+        left: 90%;
+        transform: scaleX(-1);
+    }
+    51% {
+        top: 55%;
+        left: 90%;
+        transform: scaleX(1);
+    }
+    100% {
+        top: 70%;
+        left: 35%;
+        transform: scaleX(1);
+    }
+}
+@keyframes swim5 {
+    0% {
+        top: 75%;
+        left: 33%;
+        transform: scaleX(-1);
+    }
+    50% {
+        top: 67%;
+        left: 41%;
+        transform: scaleX(-1);
+    }
+    51% {
+        top: 67%;
+        left: 41%;
+        transform: scaleX(1);
+    }
+    100% {
+        top: 75%;
+        left: 33%;
+        transform: scaleX(1);
+    }
+}
+@keyframes swim6 {
+    0% {
+        top: 90%;
+        left: 5%;
+    }
+    25% {
+        top: 80%;
+        left: 10%
+    }
+    50% {
+        top: 90%;
+        left: 15%;
+        transform: scaleX(-1);
+    }
+    51% {
+        top: 90%;
+        left: 15%;
+        transform: scaleX(1);
+    }
+    75% {
+        top: 80%;
+        left: 10%;
+        transform: scaleX(1);
+    }
+    100% {
+        top: 90%;
+        left: 5%;
+        transform: scaleX(1);
+    }
+}
+
+/* Hover-funksjoner på noen av fiskene */
+#fish-img2:hover {
+    opacity: 0;
+    width: 150px;
+    transition: all ease-in 750ms;
+}
+#goldfish-img:hover {
+    position: absolute;
+    width: 170px;
+    opacity: 0;
+    transition: all ease-in 750ms;
+}
+#goldfish-img2:hover {
+    position: absolute;
+    width: 170px;
+    opacity: 0;
+    transition: all ease-in 750ms;
+}
+#goldfish-img3:hover {
+    position: absolute;
+    width: 170px;
+    opacity: 0;
+    transition: all ease-in 750ms;
+}
+
+
+/* Her kommer lukene under båten */
+.space{
+    width: 500px;
+    height: 500px;
+    position: relative;
+}
+.door{
+    position: absolute;
+    height: 5px;
+    width: 80px;
+    background:  red;
+    border: black solid 2px;
+    z-index: 1;
+    display: none;            
+}
+.door-left{
+    transform: rotate(-5deg);
+    left: 610px;
+    top: 385px;
+    transform-origin: left;        
+}
+.door-right{
+    transform: rotate(-20deg);
+    left: 710px;
+    top: 380px;
+    transform-origin: right;    
+}
+
+/* Hvordan åpne lukene: */
+#activate:checked ~ .door-left{
+    animation: door-left-move 5s 1 forwards ease-in;
+    display: initial;
+}
+#activate:checked ~ .door-right{
+    animation: door-right-move 5s 1 forwards ease-in;
+    display: initial;
+}
+
+/* Animasjonene til lukene */
+@keyframes door-left-move{
+    0% {
+        transform: rotate(-5deg);
+    }
+    25% {
+        transform: rotate(120deg);
+    }
+    50% {
+        transform: rotate(120deg);
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+@keyframes door-right-move{
+    0% {
+        transform: rotate(-20deg);
+    }
+    25% {
+        transform: rotate(-140deg);
+    }
+    50% {
+        transform: rotate(-140deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/* Bildet av ubåten */
+#submarine {
+    position: absolute;
+    transform: scaleX(-1);
+    top: 40%;
+    left: 44%;
+    width: 135px;
+    display: none;
+}
+
+/* Hvordan ubåten blir aktivert */
+#activate:checked ~ #submarine{
+    animation: drop-sub 4s 1 forwards ease-in;
+    display: initial;
+}
+
+/* Animasjonen til ubåten */
+@keyframes drop-sub {
+    0% {
+        top: 40%;
+        left: 44%;
+        transform: scaleX(-1);
+    }
+    100% {
+        top: 105%;
+        left: 44%;
+        transform: scaleX(-1);
+    }
+}
+
+    /* Neste side */
+#next-page {
+    color: black;
+    opacity: 0;
+    border-radius: 15%;
+    background: white;
+    text-decoration-line: none;
+}
+#next-page:visited {
+    color: black;
+    border-radius: 15%;
+    background-color: white;
+    text-decoration-line: none;
+}
+#activate:checked ~ #next-page{
+    animation: show-next-button 1s 1 4s forwards;
+}
+@keyframes show-next-button {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

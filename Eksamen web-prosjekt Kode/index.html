@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hovedside</title>
+    <link rel="stylesheet" href="style-index.css">
+</head>
+
+<body>
+
+    <!-- Hovedoverskrift -->
+    <header>
+        <h1>Velkommen til havreiser!</h1>
+        <p>- Velg destinasjon for mer informasjon:</p>
+    </header>
+
+    <!-- Kart 
+        På kartet er det tre klikkbare destinasjoner.
+    -->
+    <nav class="map-container">
+        <label for="destination-1" id="map-position-1" class="map-target">
+            <span class="map-dot"></span>
+            <span class="map-text">Stillehavet</span>
+        </label>
+        <label for="destination-2" id="map-position-2" class="map-target">
+            <span class="map-dot"></span>
+            <span class="map-text">Atlanterhavet</span>
+        </label>
+        <label for="destination-3" id="map-position-3" class="map-target">
+            <span class="map-dot"></span>
+            <span class="map-text">Det indiske hav</span>
+        </label>
+    </nav>
+    
+    <!-- Faktavindu for hvert hav - sidens hovedinnhold:
+        - På default er vinduene skjult for bruker. 
+        - På klikk på en av destinasjonene på kartet vises faktavinduet for den valgte destinasjonen.
+    -->
+    <main>
+
+        <!-- Fakta om Stillehavet -->
+        <div>
+            <!-- Trigger (skjult for bruker) -->
+            <input type="radio" id="destination-1" name="destination">
+
+            <!-- faktavindu -->
+            <div id="window-1" class="flex-container">
+
+                <nav class="window-nav">
+                    <div class="list-item">
+                        <label for="back-1" class="window-btn window-btn-1">Tilbake</label>
+                        <input type="radio" id="back-1" name="destination">
+                    </div>
+                    <div class="list-item">   
+                        <a href="stillehavet.html" class="window-btn window-btn-2">Reis</a>
+                    </div>
+                </nav>
+
+                <section class="flexbox column-1">
+                    <h3>Stillehavet</h3>
+                    <p>
+                        Stillehavet er Jordens største havområde. Navnet stammer fra det latinske Mare Pacificum, «det fredelige havet», som ble gitt av den portugisiske oppdagelsesreisende Ferdinand Magellan på sin reise i 1521, som var preget av rolige værforhold. Stillehavet strekker seg fra Arktis i nord til Antarktis i sør, omsluttet av Asia og Australia i vest og Amerika i øst.
+                    </p>
+                    <p>
+                        Med sine 165 millioner kvadratkilometer (inkludert randhav) utgjør dette den største delen av verdens havområder - og dermed hydrosfæren - hvor det utgjør ca. 46 % av jordens vannoverflate og 32 % av den totale jordoverflatens. Stillehavet er dermed større enn alle jordens landarealer til sammen.[1] Ekvator deler det inn i Det nordlige Stillehav og Det sydlige Stillehav. Det meste av Stillehavet når dyp på over 4 000 meter, og Marianergropen i den vestlige delen av Det nordlige Stillehav er med sine 10 911 meter både Stillehavets og Jordens dypeste punkt.
+                    </p>
+                </section>
+
+                <div class="flexbox column-2">
+                    <img class="profile-img" src="img/stillehavet.jpg" alt="">
+                    <ul>         
+                        <li><span class="bold">Type:</span>	Verdenshav</li>
+                        <li><span class="bold">Areal: </span>106 000 000 km² (inkludert bihav)</li>
+                        <li><span class="bold">Bredde: </span>2 850–6 500 km</li>
+                        <li><span class="bold">Dybde: </span>Milwaukeedypet, 8 380 m (maks), 3300 m (snitt)</li>
+                        <li><span class="bold">Volum:</span>354 700 000 km³</li>
+                        <li><span class="bold">Salinitet:</span>34–37 %</li>
+                        <li><span class="bold">Del av:</span>Verdenshavet  </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Fakta om Atlanterhavet -->
+        <div>
+            <!-- Trigger (skjult for bruker) -->
+            <input type="radio" id="destination-2" name="destination">
+
+            <!-- Faktavindu -->
+            <div id="window-2" class="flex-container">
+
+                <nav class="window-nav">
+                    <div class="list-item">
+                        <label for="back-2" class="window-btn window-btn-1">Tilbake</label>
+                        <input type="radio" id="back-2" name="destination">
+                    </div>
+                    <div class="list-item">   
+                        <a href="atlanterhavet.html" class="window-btn window-btn-2">Reis</a>
+                    </div>
+                </nav>
+                
+                <section class="flexbox column-1">
+                    <h3>Atlanterhavet</h3>
+                    <p>
+                        Atlanterhavet eller Atlanteren er havet mellom Nord- og Sør-Amerika mot vest, og Europa og Afrika mot øst. Det er verdens nest største hav, og dekker nærmere en femtedel av jordens overflate. Det dekker et totalt område på ca. 106 000 000 kvadratkilometer, noe som er rundt 20 prosent av jordens overflate, og 26 prosent av jordens overflate som består av vann. Den gjennomsnittlige dybden er på 3 300 meter og det største dypet er Puerto Rico-gropa på 8 380 meter.
+                    </p>
+                    <p>
+                        Havets navn kommer fra gresk mytologi og er oppkalt etter titanen Atlas. Den eldste referansen til navnet er i den greske historikeren Herodots Historie fra rundt 450 f.Kr.: som Atlantis thalassa (gresk: Ἀτλαντὶς θάλασσα; norsk «Atlas’ hav»; se også Atlasfjellene). Atlantis (gresk: Ἀτλαντὶς νῆσος, «Atlas’ øy») er en legendarisk øy nevnt av Herodot som skal ligger utenfor Herkulessøylene (Gibraltarstredet). Betegnelsen Det etiopiske hav, avledet fra Etiopia, ble benyttet som navn på den sørlige delen av Atlanterhavet så sent som midten av 1800-tallet. Før europeerne oppdaget andre hav ble betegnelsen «hav» i seg selv benyttet som synonym for vannene som lå bortenfor Gibraltarstredet av det som i dag omtales som Atlanterhavet. Antikkens grekere forestilte seg at dette havet var en enorm elv som sirklet om verden.
+                    </p>
+                    <p>
+                        Havet dekker rundt 20 % av jordens overflate og bare Stillehavet er større. Med sine tilgrensende sjøområder dekker det rundt 106 000 000 km². Uten dem har det et areal på 82 400 000 km². Nedslagsfeltet for havet er fire ganger større enn Stillehavet eller Indiahavet. Volumet av Atlanterhavet med tilgrensende sjøområder er 354 700 000 km³, uten dem har havet 323 600 000 km³.
+                    </p>
+                </section>
+
+                <div class="flexbox column-2">
+                    <img class="profile-img" src="img/atlanterhavet.jpg" alt="">
+                    <ul>         
+                        <li><span class="bold">Type:</span>	Verdenshav</li>
+                        <li><span class="bold">Areal: </span>106 000 000 km² (inkludert bihav)</li>
+                        <li><span class="bold">Bredde: </span>2 850–6 500 km</li>
+                        <li><span class="bold">Dybde: </span>Milwaukeedypet, 8 380 m (maks), 3300 m (snitt)</li>
+                        <li><span class="bold">Volum:</span>354 700 000 km³</li>
+                        <li><span class="bold">Salinitet:</span>34–37 %</li>
+                        <li><span class="bold">Del av:</span>Verdenshavet  </li>
+                    </ul>
+                </div>
+
+            </div> <!-- END: flex-container-->
+
+        </div> <!-- END: Atlanterhavet -->
+
+        <!-- Fakta om Det indiske hav -->
+        <div>
+            <!-- Trigger (skjult for bruker) -->
+            <input type="radio" id="destination-3" name="destination">
+
+            <!-- Faktavindu -->
+            <div id="window-3" class="flex-container">
+
+                <nav class="window-nav">
+                    <div class="list-item">
+                        <label for="back-3" class="window-btn window-btn-1">Tilbake</label>
+                        <input type="radio" id="back-3" name="destination">
+                    </div>
+                    <div class="list-item">   
+                        <a href="indiske-hav.html" class="window-btn window-btn-2">Reis</a>
+                    </div>
+                </nav>
+
+                <section class="flexbox column-1">
+                    <h3>Det indiske hav</h3>
+                    <p>
+                        Indiahavet er det minste av de tre verdenshavene. Det strekker seg fra Asia i nord til Antarktis i sør, begrenses i vest av det afrikanske kontinent og Arabia, og i øst av Australia, Java, Sumatra og Malayahalvøya. Grensen mot Stillehavet sør for Australia trekkes langs meridianen gjennom South East Cape på Tasmania på 147° østlig lengde, og grensen mot Atlanterhavet sør for Afrika, langs meridianen gjennom Kapp Agulhas på 20° østlig lengde. Ofte regnes den sørlige delen til Sørishavet, men noe naturlig skille som skulle tilsi en slik todeling, finnes ikke. I nord skiller den indiske halvøy mellom Bengalbukta og Andamansjøen i øst, og Arabiske hav med Rødehavet og Persiske bukt i vest.
+                    </p>
+                    <p>
+                        Saltholdigheten når sør for den sørlige vendesirkel opp imot 37 promille og synker i Sørishavet til 33,5 promille. Ved ekvator er den størst i vest, med 35,5 promille og 33 promille utenfor Sumatra. I nord har Arabiske hav 36 promille, mens Bengalbukta har 34 promille i sør og 30 promille i nord. Størst saltholdighet har Rødehavet og Persiske bukt, med over 40 promille..
+                    </p>
+                </section>
+
+                <div class="flexbox column-2">
+                    <img class="profile-img" src="img/indiske-hav.JPG" alt="">
+                    <ul>         
+                        <li><span class="bold">Type:</span>	Verdenshav</li>
+                        <li><span class="bold">Areal: </span>106 000 000 km² (inkludert bihav)</li>
+                        <li><span class="bold">Bredde: </span>2 850–6 500 km</li>
+                        <li><span class="bold">Dybde: </span>Milwaukeedypet, 8 380 m (maks), 3300 m (snitt)</li>
+                        <li><span class="bold">Volum:</span>354 700 000 km³</li>
+                        <li><span class="bold">Salinitet:</span>34–37 %</li>
+                        <li><span class="bold">Del av:</span>Verdenshavet  </li>
+                    </ul>
+                </div>
+
+            </div> <!-- END: Flex-container-->
+        </div> <!-- END: Indiske hav-->
+
+    </main> <!-- END: hovedinnhold-->
+    
+</body>
+</html>

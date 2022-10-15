@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+	<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Atlanterhavet</title>
+    <link rel="stylesheet" href="atlanterhavet.css">
+    <link rel="stylesheet" href="style.mini-map.css">
+    
+</head>
+<body>
+	
+    <!-- HOVED-CONTAINER:
+       - Alle elementer legges inn i denne containeren, eller i childs-containers
+       - Inneholder 3 Childs-Containers (TOP, MIDDLE OG BOTTOM)
+    -->
+    <div class="main-container">
+        
+        <!-- Overskrift og Paragraf for siden -->
+        <h1 class="h1-top">Atlanterhavet</h1>
+        <p class="p-top">- Hold over maskinen for å se hva du kan gjøre</p>
+        <p class="p-top2">- Du kan navigere deg videre med kartet i høyre hjørnet</p>
+        <!-- Input til labels i "Middle-Container": 
+           - SIBLINGS med Middle -og Bottom-Containers 
+        -->
+        <input type="radio" id="on" name="power">
+        <input type="radio" id="off" name="power">
+        
+        <!-- Bilder som MÅ ligge i Main:
+           - Med tanke på funksjonalitet på diverse oppløsninger 
+        -->
+        <img class="boat" alt="" src="img/boat.png">
+        <img class="city" alt="" src="img/city.png">
+        <img class="ground" alt="" src="img/ground.png">
+        
+        
+        <!-- TOP-CONTAINER - Himmelen -->
+        <div class="top-container"></div> 
+        
+            <!-- Mini-Kart -->
+            <nav class="mini-map">
+                <div class="nav-container">
+                    <img class="mini-map-img" src="img/world_map2.png" alt="">
+                    <a href="stillehavet.html" class="node" id="node-position1">Stillehavet</a>
+                    <a href="atlanterhavet.html" class="node" id="node-position2">Du er her</a>
+                    <a href="indiske-hav.html" class="node" id="node-position3">Indiske hav</a>
+                    <a href="index.html" id="node-position-home" class="node">Hovedsiden</a>
+                </div>
+            </nav>
+        <!-- END Top-Container -->
+        
+               
+        <!-- MIDDLE-CONTAINER - Havet -->
+        <div class="middle-container">
+            
+            <!-- Maskinen i Havet -->
+            <img class="machine" alt="" src="img/machine.png">
+            
+                <!-- HOVER DIV - For maskinen -->
+                <div class="machine-div">
+                    <img class="machine-button" alt="" src="img/machine-button.png">
+                    <label class="power-label" for="on">PÅ</label>
+                    <label class="power-label2" for="off">AV</label>
+                </div>
+            <!-- END Maskinen i havet -->
+            
+            <!-- Bilder-Havet -->
+            <img class="crab" alt="" src="img/crab.png">
+            <img class="bubbles" alt="" src="img/bubble.gif">
+            <img class="coral" alt="" src="img/coral3.png">
+            <img class="seaweed" alt="" src="img/seaweed.png">
+            <img class="seaweed2" alt="" src="img/seaweed2.png">
+            <img class="fish" alt="" src="img/blue-fish.png">
+            <img class="clown-fish" alt="" src="img/clownfish.png">
+        </div>
+        <!-- END Middle-Container -->
+        
+        
+        <!-- BOTTOM-CONTAINER - Havbunnen -->
+        <div class="bottom-container"></div>
+        <!-- END Bottom-Container -->
+        
+    </div>
+    <!-- END Hoved-Container -->
+</body>
+</html>

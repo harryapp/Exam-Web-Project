@@ -1,0 +1,602 @@
+/* Generell styling */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+
+header{
+    padding: 25px;
+}
+
+h1, a{
+    font-family: fantasy;
+    color: black;
+    text-decoration: none;
+}
+
+/* Hoved-container
+    - rommer tre nivåer: topp, midt og bunn
+*/
+.main-container{
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+/* Topp-container
+    - representerer himmelen
+    - rommer header, sol og mini-kart
+*/
+.top-container{
+    background: rgb(173,216,230);
+    height: 40vh;
+    position: relative;
+}
+
+
+/* Midt-container:
+    - representerer vannmassen
+    - rommer alle fisk, dyr og planter 
+*/
+.middle-container{
+    height: 50vh;
+    position: relative;
+    background: linear-gradient(180deg, rgb(127,206,197) 5%, rgb(36,95,124) 75%);
+}
+
+/* Bunn-container:
+ - Representerer havbunnen
+*/
+.bottom-container{
+    height: 10vh;
+    position: relative;
+    z-index: -1;
+}
+
+.bottom{
+    background: linear-gradient(170deg,  rgb(206, 130, 63) 10%,  rgb(244, 164, 96) 65%);
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
+/* båt  */
+.boat{
+    position: absolute;
+    width: 200px;
+    top: -150px;
+    transform: scaleX(-1);
+    left: 200px;
+    animation: move 2s 1;
+    z-index: 2;
+}
+
+/* Båten animeres inn fra venstre og inn på siden */
+@keyframes move{
+    0%{left: -100px;}
+    100%{left: 200px}
+}
+
+
+/* Panel med knapp på båten 
+    - på default er panelet skjult
+*/
+.boat-panel{
+    position:absolute;
+    height: 90px;
+    width: 90px;
+    left: 250px;
+    top: -80px;
+    background: whitesmoke;
+    border: rgb(214, 115, 48) 5px solid;
+    border-radius: 20px;
+    display: none;
+    text-align: center;
+    z-index: 2;
+}
+
+/* På hover over båten vises panelet */
+.boat:hover  ~ .boat-panel{
+    display: inline;
+}
+
+/* På hover over panelet vises panelet
+ - Det er for at panelet fortsatt skal vises når man hoverer over det
+*/
+.boat-panel:hover{
+    display: inline;
+}
+
+/* Panelet skjules etter at bruker har brukt knappen */
+#activate-barrel:checked ~ .boat-panel{
+    position: absolute;
+    left: -1000px;
+    color: red;
+    background: red;
+}
+
+/* Dørpaneler under båten:
+    - består venstre- og høyre dørpanel
+    - er skjult fram til animasjonen starter
+*/
+.door{
+    position: absolute;
+    height: 5px;
+    width: 50px;
+    background:  rgb(228, 221, 221);
+    border: black solid 2px;
+    z-index: 1;
+    display: none;
+}
+
+.door-left{
+    transform: rotate(-5deg);
+    left: 268px;
+    top: 15px;
+    transform-origin: left;
+    
+}
+.door-right{
+    transform: rotate(-20deg);
+    left: 320px;
+    top: -5px;
+    transform-origin: right;
+}
+
+/* Dørpanelene vises, åpnes og lukkes og forsvinner deretter  */
+#activate-barrel:checked ~ .door-left{
+    animation: door-left-move 5s 1 forwards ease-in;
+    display: initial;
+}
+#activate-barrel:checked ~ .door-right{
+    animation: door-right-move 5s 1 forwards ease-in;
+    display: initial;
+}
+
+@keyframes door-left-move{
+    0%{
+        transform: rotate(-5deg);
+    }
+    25%{
+        transform: rotate(120deg);
+    }
+    50%{
+        transform: rotate(120deg);
+    }
+    100%{
+        transform: rotate(-5deg);
+
+    }
+}
+@keyframes door-right-move{
+    0%{
+        transform: rotate(-20deg);
+    }
+    25%{
+        transform: rotate(-140deg);
+    }
+    50%{
+        transform: rotate(-140deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+/* Oljetønne-ikon som fungerer som knapp på panelet */
+.btn-barrel-icon{
+    width: 50%;
+    margin-top: 10%;
+}
+
+/* Oljetønne 
+- Er skjult på default, og vises når knappen på panelet aktiveres
+*/
+.barrel{
+    height: 75px;
+    width: 50px;
+    background: black;
+    position: absolute;
+    left: 265px;
+    top: -50px;
+    color: white;
+    text-align: center;
+    z-index: 1;
+    border-radius: 5px;
+    display: none;
+}
+
+/* Input-elementet til knappen
+    - Er skjult da det er tilhørende label som brukes som fysisk knapp
+*/
+#activate-barrel{
+   display: none;
+}
+
+/* Knapp for start av animasjoner:
+    - Bruker en label som knappen som kaller på en input-tag
+*/
+.btn-activate-barrel{
+    cursor: pointer;
+}
+
+/* Animasjon av oljetønne
+    - delay: timet med dørpanelet slik at animasjonene starter når dørpanelet åpnet
+    - tønne beveger seg fra båten til bunnen
+*/
+#activate-barrel:checked ~ .barrel{
+    animation-name: barrel-move;
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-delay: 2s;
+    position: absolute;
+    animation-fill-mode: forwards; 
+    display: inline;        
+}
+
+@keyframes barrel-move{
+    0%{
+        left: 265px;
+        top: -50px;
+    }
+
+    80%{
+        left: 50%;
+        top: 90%;
+        transform: rotate(670deg);
+    }
+
+    100%{
+        left: 50%;
+        top: 90%;
+        transform: rotate(655deg);
+    }
+}
+
+/* Oljesky */
+.smoke-img{
+    width: 20px;
+    position: absolute;
+    left: 45%;
+    bottom: 0%;
+    z-index: -1;
+}
+
+/* Animasjon av oljetønne:
+    - delay: timet med oljetønnen slik at animasjonene starter når tønnen har nådd bunnen
+    - animerer oljesky som flyter opp til overflaten samtidig som den utvider seg
+ */
+#activate-barrel:checked ~.smoke-img{
+    animation-name: smoke-animation;
+    animation-duration: 8s;
+    animation-iteration-count: 1;
+    position: absolute;
+    animation-fill-mode: forwards;
+    animation-delay: 4s;
+}
+
+@keyframes smoke-animation{
+    0%{
+        bottom: 0%;
+        z-index: 0;
+        opacity: 0.1;
+        transform: scale(1);
+        width: 150px;
+        height: 20px;
+    }
+
+    100%{
+        transform: scale(10);
+        z-index: 2;
+        opacity: 0.8;
+        width: 150px;
+        height: 20px;
+        bottom: 70%;
+    }
+}
+
+/* Skillepadde */
+.turtle-1{
+    position: absolute;
+    width: 60px;
+    top: 27%;
+    right: 40%;
+    animation-name: turtle-swim;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+}
+
+/* Animasjon som kjøres når siden lastes opp:
+    - Svømmer fram og tilbake
+    - bilde speilvendes når skillepadden snur retning
+    */
+@keyframes turtle-swim{
+    0%{
+        right: 40%;
+        transform: scaleX(1);
+    }
+    50%{
+        right: 50%;
+        transform: scaleX(1);
+    }
+    51%{
+        right: 50%;
+        transform: scaleX(-1);
+    }
+    100%{
+        right: 40%;
+        transform: scaleX(-1)
+    }
+}
+
+#activate-barrel:checked ~.turtle-1{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+
+/* Krabbe */
+.crab-1{
+    position: absolute;
+    top: 105%;
+    left: 50%;
+}
+
+/* Animasjon når oljetønneknappen aktiveres
+    - delay for time det med oljeskyen som flyter opp
+*/
+#activate-barrel:checked ~.crab-1{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+
+/* mal som brukes av alle clovnfiskene */
+.fish-template-1{
+    position: absolute;
+    width: 30px;
+    transform: scaleX(-1);
+}
+
+/* Fisk
+    - posisjonen og animasjonen til hver fisk
+ */
+
+.fish-1{
+    top: 40%;
+    left: 45%;
+    animation: fish-move 41s infinite;
+}
+.fish-2{
+    top: 46%;
+    left: 39%;
+    animation: fish-move 56s infinite;
+}
+.fish-3{
+    top: 42%;
+    left: 40%;
+    animation: fish-move 245s infinite;
+}
+.fish-4{
+    top: 45%;
+    left: 46%;
+    animation: fish-move 46s infinite;
+}
+.fish-5{
+    top: 46%;
+    left: 38%;
+    animation: fish-move 57s infinite;
+}
+.fish-6{
+    top: 40%;
+    left: 47%;
+    animation: fish-move 56s infinite;
+}
+.fish-7{
+    top: 42%;
+    left: 41%;
+    animation: fish-move 59s infinite;
+}
+.fish-8{
+    top: 58%;
+    left: 39%;
+    animation: fish-move 47s infinite;
+}
+.fish-9{
+    top: 48%;
+    left: 45%;
+    animation: fish-move 58s infinite;
+}
+.fish-10{
+    top: 46%;
+    left: 38%;
+    animation: fish-move 54s infinite;
+}
+.fish-11{
+    top: 50%;
+    left: 42%;
+    animation: fish-move 52s infinite;
+}
+.fish-12{
+    top: 52%;
+    left: 51%;
+    animation: fish-move 55s infinite;
+}
+.fish-13{
+    top: 55%;
+    left: 43%;
+    animation: fish-move 52s infinite;
+}
+.fish-14{
+    top: 60%;
+    left: 48%;
+    animation: fish-move 23s infinite;
+}
+.fish-15{
+    top: 58%;
+    left: 49%;
+    animation: fish-move 18s infinite;
+}
+
+/* Animasjon av fisk:
+    - starter nå siden lastes opp
+    - brukes av alle fiskene
+    - animerer bevegelse samt rotasjon når fisken snur retning
+*/
+
+@keyframes fish-move {
+    50%{
+        left: 50%;
+        transform: scaleX(-1);
+    }
+
+    51%{
+        left: 50%;
+        transform: scaleX(1);
+    }
+    100%{
+        
+        transform: scaleX(1);
+    }
+}
+
+#activate-barrel:checked ~.fish-1{
+    animation: fish-dies 10s 1 6s forwards;
+
+}
+#activate-barrel:checked ~.fish-2{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-3{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-4{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-5{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-6{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-7{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-8{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-9{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-10{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-11{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-12{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-13{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-14{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+#activate-barrel:checked ~.fish-15{
+    animation: fish-dies 10s 1 6s forwards;
+}
+
+/* Animasjon av fisk som dør av oljeskyen
+    - Brukes av alle fiskene og dyrene
+    - flyter gradvis opp til overflaten og med rotasjon
+*/
+@keyframes fish-dies{
+    0%{
+        transform: rotate(380deg);
+    }
+    100%{
+        top:0%;
+        transform: rotate(180deg);
+    }
+}
+
+.sun{
+    position: absolute;
+    height: 50px;
+    width: 50px;
+    left: 50%;
+    top: 0;
+}
+
+
+.plant{
+    position: absolute;
+}
+
+/* planter */
+.plant-1{
+    bottom: 0;
+    left: 22%;
+}
+.plant-3{
+    bottom: 0;
+    left: 25%;
+}
+.plant-4{
+    bottom: 0;
+    left: 26%;
+}
+.plant-5{
+    bottom: 0;
+    left: 70%;
+}
+.plant-6{
+    bottom: 0;
+    left: 60%;
+}
+
+
+.bubble-plant{
+    position: absolute;
+    bottom: -20px;
+}
+
+
+.bubble-plant-1{
+    left: 5%;
+}
+.bubble-plant-2{
+    left: 36%;
+}
+.bubble-plant-3{
+    left: 90%;
+}
+
+.bubble{
+    position: absolute;
+    bottom: 10px;
+}
+
+.bubble-1{
+    left: 5%;
+}
+.bubble-2{
+    left: 36%;
+}
+.bubble-3{
+    left: 90%;
+}

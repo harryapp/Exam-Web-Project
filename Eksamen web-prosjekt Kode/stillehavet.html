@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stillhavet</title>
+    <link rel="stylesheet" href="style.mini-map.css">
+    <link rel="stylesheet" href="stillehavet.css">
+</head>
+
+<body>
+
+    <!-- Hovedbeholder - inneholder topp-, midt- og bunnnivå -->
+    <div class="main-container">
+
+        <!-- Toppnivnå (himmelen) -->
+        <div class="top-container">
+            
+            <!-- Hovedoverskrift. Fungerer også som en link for å oppdatere siden. -->
+            <header>
+                <a href="stillehavet.html">
+                    <h1>Stillehavet</h1>
+                    <p>Bruk oljetønnen på båten</p>
+                </a>
+            </header>
+
+            <!-- Minikart med punkter for navigering til de andre destinasjonene og til hovedsiden -->
+            <nav class="mini-map">
+                <div class="nav-container">
+                    <!-- <img class="mini-map-img" src="img/world_map2.png" alt=""> -->
+                    <a href="stillehavet.html" class="node" id="node-position1">Du er her </a>
+                    <a href="atlanterhavet.html" class="node" id="node-position2">Atlanterhavet</a>
+                    <a href="indiske-hav.html" class="node" id="node-position3">Indiske hav</a>
+                    <a href="index.html" id="node-position-home" class="node">Hovedsiden</a>          
+                </div>
+            </nav>
+
+            <!-- Bilde av sol -->
+            <img class="sun" src="img/sun.png" alt="">
+        </div> <!-- SLUTT: Toppnivå -->
+
+        <!-- Midtnivå (Havet)-->
+        <div class="middle-container">
+
+            <!-- Trigger for flere animasjoner i vannet -->
+            <input type="radio" id="activate-barrel" name="on">
+
+            <!-- Bilde av båten -->
+            <img class="boat" src="img/boat.png" alt="">
+
+            <!-- Panel med knapp:
+                - Den er skjult på default
+                - vises på hover på båten. 
+                - på trykk trigges animasjonene:
+                    1. Dørluke åpnes og lukkes 
+                    2. Oljetønne slippes fra båten og ned i havbunnen
+                    3. Oljesky vises og utvider seg oppover
+                    4. dyrelivet dør og flyter opp
+            -->
+            <div class="boat-panel">
+                <label for="activate-barrel" class="btn-activate-barrel">
+                    <img src="img/oil-barrel.png" class="btn-barrel-icon" alt="">
+                </label>
+            </div>
+
+            <!-- 1. Dørluken under båten.  -->
+            <div class="door-left door"></div>
+            <div class="door-right door"></div>
+
+            <!-- 2. Oljetønne -->
+            <img class="barrel" src="img/oil-barrel.png" alt="">
+
+            <!-- 3. Oljesky -->
+            <img class="smoke-img" src="img/smoke.png" alt="">
+
+            <!-- 4. Fisk og andre dyr -->
+            <img src="img/turtle.png" alt="" class="turtle-1">
+            <img class="crab-1 fish-template" src="img/crab2.png" alt="">
+
+            <img src="img/clown-fish-2.png" alt="" class="fish-1 fish-template-1 fish-depth-1">
+            <img src="img/clown-fish-2.png" alt="" class="fish-2 fish-template-1 fish-depth-1">
+            <img src="img/clown-fish-2.png" alt="" class="fish-3 fish-template-1 fish-depth-1">
+            <img src="img/clown-fish-2.png" alt="" class="fish-4 fish-template-1 fish-depth-1">
+            <img src="img/clown-fish-2.png" alt="" class="fish-5 fish-template-1 fish-depth-1">
+            <img src="img/clown-fish-2.png" alt="" class="fish-6 fish-template-1 fish-depth-2">
+            <img src="img/clown-fish-2.png" alt="" class="fish-7 fish-template-1 fish-depth-2">
+            <img src="img/clown-fish-2.png" alt="" class="fish-8 fish-template-1 fish-depth-2">
+            <img src="img/clown-fish-2.png" alt="" class="fish-9 fish-template-1 fish-depth-2">
+            <img src="img/clown-fish-2.png" alt="" class="fish-10 fish-template-1 fish-depth-2">
+            <img src="img/clown-fish-2.png" alt="" class="fish-11 fish-template-1 fish-depth-3">
+            <img src="img/clown-fish-2.png" alt="" class="fish-12 fish-template-1 fish-depth-3">
+            <img src="img/clown-fish-2.png" alt="" class="fish-13 fish-template-1 fish-depth-3">
+            <img src="img/clown-fish-2.png" alt="" class="fish-14 fish-template-1 fish-depth-3">
+            <img src="img/clown-fish-2.png" alt="" class="fish-15 fish-template-1 fish-depth-3">
+
+            <!-- planter -->
+            <img src="img/coral-1.png" class="plant plant-1" alt="">
+
+            <img src="img/coral-1.png" class="plant plant-3" alt="">
+            <img src="img/coral-1.png" class="plant plant-4" alt="">
+            <img src="img/coral-1.png" class="plant plant-5" alt="">
+            <img src="img/coral-1.png" class="plant plant-6" alt="">
+
+            <!-- planter med bobler-->
+            <img src="img/coral-2.png" class="bubble-plant bubble-plant-1" alt="">
+            <img src="img/bubble.gif" class="bubble bubble-1" alt="">
+
+            <img src="img/coral-2.png" class="bubble-plant bubble-plant-2" alt="">
+            <img src="img/bubble.gif" class="bubble bubble-2" alt="">
+
+            <img src="img/coral-2.png" class="bubble-plant bubble-plant-3" alt="">
+            <img src="img/bubble.gif" class="bubble bubble-3" alt="">
+
+        </div> <!-- SLUTT: Midtnivå-->
+
+        <!-- Bunnnivå - Havbunnen -->
+        <div class="bottom-container">
+            <div class="bottom">
+                <!-- ingen innhold -->
+            </div>
+        </div> <!-- SLUTT: Bunnnivå-->
+
+    </div> <!-- SLUTT: main-container-->
+
+</body>
+</html>

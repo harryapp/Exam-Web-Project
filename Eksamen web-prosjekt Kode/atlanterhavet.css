@@ -1,0 +1,470 @@
+/* Utforming av høyden på siden */
+body{
+    margin: 0px;
+}
+
+html{
+    height: 100%;
+}
+
+.main-container{
+    max-height: 100vh;
+}
+
+/* Himmelen */
+.top-container{
+    background: rgb(173,216,230);
+    height: 50vh;
+    position: relative;
+    z-index: -1;
+}
+
+/* Overskrift og Paragrafer for siden */
+.h1-top{
+    position: absolute;
+    font-family: fantasy;
+    font-size: 60px;
+    left: 10px;
+}
+
+.p-top{
+    position: absolute;
+    font-family: fantasy;
+    font-size: 20px;
+    top: 12%;
+    left: 10px;
+    z-index: 3;
+}
+
+.p-top2{
+    position: absolute;
+    font-family: fantasy;
+    font-size: 20px;
+    top: 16%;
+    left: 10px;
+    z-index: 3;
+}
+
+/* Bilde av Byen */
+.city{
+    position: absolute;
+    width: 450px;
+    height: 300px;
+    right: 0%;
+    bottom: 50%;
+    z-index: 2;
+}
+
+/* Bilde av Bakken under Byen */
+.ground{
+    position: absolute;
+    width:500px;
+    height: 419px;
+    right: -1%;
+    top: 47%;
+    z-index: 1;
+}
+
+/* Bilde av Båt og Animasjon av Båt som kjører inn på siden */
+.boat{
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    bottom: 46%;
+    left: 35%;
+    z-index: 1;
+    transform: scaleX(-1);
+    animation: boat-move;
+    animation-duration: 4s;
+    animation-iteration-count: 1;
+    animation-timing-function: linear;
+}
+
+@keyframes boat-move{
+    0% {
+    left: -20%; 
+    bottom: 46%;
+}
+    100%{
+    left: 35%; 
+    bottom: 46%;
+}
+}
+
+/* Havet */
+.middle-container{
+    background: linear-gradient(180deg, rgb(127,206,197) 5%, rgb(36,95,124) 75%);
+    height: 40vh;
+    position: relative;
+}
+
+/* Bilde av Sjøgress nr1 og Animasjon */
+.seaweed{
+    position: absolute;
+    width: 75px;
+    height: 100px;
+    bottom: -5px;
+    left: 40px;
+    animation: seaweed-move;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+ }   
+@keyframes seaweed-move{
+    0%{transform: rotate(-5deg)}
+    25%{transform: rotate(5deg)}
+    50%{transform: rotate(10deg)}
+    100%{transform: rotate(-5deg)}
+}
+
+/* Bilde av Sjøgress nr.2 og Animasjon */
+.seaweed2{
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    bottom: -2px;
+    left: 30%;
+    animation: seaweed2-move;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+ }   
+@keyframes seaweed2-move{
+    0%{transform: rotate(5deg)}
+    25%{transform: rotate(-5deg)}
+    50%{transform: rotate(-10deg)}
+    100%{transform: rotate(5deg)}
+}
+
+/* Bilde og Animasjon av Krabbe */
+.crab{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0px;
+    right: 80%;
+    z-index: 3;
+    animation: crab-move;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@keyframes crab-move{
+    0%{
+    left: 100px; 
+    bottom: -5px;
+}
+    50%{
+    left: 250px; 
+    bottom: -5px;
+}
+    100%{
+    left: 100px; 
+    bottom: -5px;
+}
+}
+
+/* Korall og Bobler på korallen */
+.coral{
+    position: absolute;
+    width: 150px;
+    height: 140px;
+    bottom: -15px;
+    left: 175px;
+    z-index: 1;
+}
+
+.bubbles{
+    position: absolute;
+    width: 50px;
+    height: 100px;
+    bottom: 30px;
+    left: 215px;
+    z-index: 2;
+}
+
+/* Bilde av Klovnefisk og Animasjon */
+.clown-fish{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0px;
+    right: 80%;
+    z-index: 0;
+    animation: clownfish-move;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+}
+
+@keyframes clownfish-move{
+    0%{
+    left: 215px; 
+    bottom: 30px;
+    transform: scaleX(1);
+    transform: rotate(-50deg);
+}
+    25%{
+    left: 350px; 
+    bottom: 250px;
+    transform: scaleX(1);
+    transform: rotate(-50deg);  
+}
+    26%{
+    left: 350px; 
+    bottom: 250px;
+    transform: scaleX(1);
+}
+    27%{
+    left: 350px; 
+    bottom: 250px;
+    transform: scaleX(-1);
+}
+    50%{
+    left: 100px; 
+    bottom: 250px;
+    transform: scaleX(-1);     
+}
+    51%{
+    left: 100px; 
+    bottom: 250px;
+    transform: scaleX(1);
+}
+    100%{
+    left: 215px; 
+    bottom: 30px;
+    transform: scaleX(-1);
+    transform: rotate(50deg);
+}
+}
+
+/* Bilde av Fisk og Animasjon */
+.fish{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    bottom: 0px;
+    right: 80%;
+    z-index: 3;
+    animation: fish-move;
+    animation-duration: 17s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes fish-move{
+    0%{
+    left: -60px; 
+    bottom: 150px;
+    transform: scaleX(1);
+}
+    50%{
+    left: 650px; 
+    bottom: 150px;
+    transform: scaleX(1);
+}
+    51%{
+    left: 650px; 
+    bottom: 150px;
+    transform: scaleX(-1);       
+}
+    100%{
+    left: -60px; 
+    bottom: 150px;
+    transform: scaleX(-1);
+}
+}
+
+/* Bilde av Maskinen i Havet */
+.machine{
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    right: 45%;
+    bottom: -3px;
+}
+
+/* DIV - Med Hover på Bilde av Maskinen */
+.machine-div{
+    position: absolute;
+    left: 40%;
+    bottom: 10px;
+    display: none;
+    height: 100px;
+    width: 300px;
+    background: rgb(9, 161, 162);
+    text-align: center;
+    font-size: 70px;
+    border: 5px solid gray;
+    z-index: 2;
+}
+
+.machine:hover~.machine-div{
+    display: inline;
+}
+
+.machine-div:hover{
+    display: inline;
+}
+
+/* PANELET ved Hover inneholder:
+  1. "PÅ" knapp med Hover og Active
+  2. Bilde av Maskinknapp (For å etterligne panelet på maskinen)
+  3. "AV" knapp med Hover og Active
+*/
+
+/* 1. "PÅ" knapp - Hover og Active */
+.power-label{
+    position: absolute;
+    top: 8px;
+    left: 10px;
+    border: solid rgb(76, 175, 80);
+    border-width: 10px;
+    border-radius: 15px;
+    background: rgb(76, 175, 80);
+    font-size: 50px;
+    color: white;
+    box-shadow: 0px 6px rgb(192,192,192);
+    cursor: pointer;
+}
+
+.power-label:hover{
+    background: rgb(62, 142, 65);
+    border: solid 10px rgb(62, 142, 65);
+}
+
+.power-label:active{
+  background-color: rgb(62, 142, 65);
+  box-shadow: 0px 2px rgb(105,105,105);
+  transform: translateY(4px);
+}
+
+
+/* Animasjon ved Klikk på "PÅ" knapp:
+- Havet stiger
+- Båten stiger med havet
+*/
+#on:checked~.middle-container{
+   animation: mid-move 2s 1 forwards;
+}
+
+#on:checked~.top-container{
+    animation: top-move 2s 1 forwards;
+}
+
+#on:checked~.boat{
+    animation: boat-move2 2s 1 forwards;
+}
+
+@keyframes top-move{
+    0%{height: 50vh;}
+    100%{height: 20vh;}
+}
+
+@keyframes mid-move{
+    0%{height: 40vh;}
+    100%{height: 70vh;}        
+}
+
+@keyframes boat-move2{
+    0%{
+    left: 35%;
+    bottom: 46%;
+}
+    100%{
+    left: 35%;
+    bottom: 76%;
+}      
+}
+
+/* 2. Bilde av knapp (Ingen funksjon - for å etterligne panelet) */
+.machine-button{
+    position: absolute;
+    height: 80px;
+    width: 80px;
+    top: 10px;
+    left: 110px;
+}
+
+/* 3. "AV" knapp - Hover og Active */
+.power-label2{
+    position: absolute;
+    top: 8px;
+    left:205px;
+    border: solid rgb(255,0,0);
+    border-width: 10px;
+    border-radius: 15px;
+    background: rgb(255,0,0);
+    font-size: 50px;
+    color: white;
+    box-shadow: 0px 6px rgb(192,192,192);
+    cursor: pointer;
+}
+
+.power-label2:hover{
+    background: rgb(220,20,60);
+    border: solid 10px rgb(220,20,60);
+}
+
+.power-label2:active{
+  background-color: rgb(220,20,60);
+  box-shadow: 0px 2px rgb(105,105,105);
+  transform: translateY(4px);
+}
+
+/* Animasjon ved Klikk på "AV" knapp:
+- Havet synker
+- Båten synker med havet
+*/
+#off:checked~.middle-container{
+   animation: mid-move2 2s 1 forwards;
+}
+
+#off:checked~.top-container{
+    animation: top-move2 2s 1 forwards;
+}
+
+#off:checked~.boat{
+    animation: boat-move3 2s 1 forwards;
+}
+
+@keyframes top-move2{
+    0%{height: 20vh;}
+    100%{height: 50vh;}
+}
+
+@keyframes mid-move2{
+    0%{height: 70vh;}
+    100%{height: 40vh;}        
+}
+
+@keyframes boat-move3{
+    0%{
+    left: 35%;
+    bottom: 76%;
+}
+    100%{
+    left: 35%;
+    bottom: 46%;
+}      
+}
+
+/* Input av "PÅ" knapp og Input av "AV" knapp:
+   -Holdes skjult
+*/
+#on{
+    display: none;
+}
+
+#off{
+    display: none;
+}
+
+/* Havbunnen */
+.bottom-container{
+    background: linear-gradient(180deg, rgb(243, 238, 112) 5%, rgb(158, 135, 99) 50%);
+    height: 10vh;
+    position: relative;
+}

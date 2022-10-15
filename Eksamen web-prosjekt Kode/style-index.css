@@ -1,0 +1,168 @@
+/* Generell styling */
+body{
+    background: linear-gradient(180deg, #7fcec5 5%, #2e5f7c 80%);
+    background-attachment: fixed;
+}
+
+header{
+    font-family: fantasy;
+}
+
+article{
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px;
+}
+
+.bold{
+    font-weight: bold;
+}
+
+.list-item{
+    display: inline;
+    text-align: center;
+}
+
+/* kart */
+.map-container{
+    position: relative;
+    background: url("img/world-map.png");
+    background-size: cover;
+    width: 1000px;
+    height: 550px;
+    margin: auto;
+    border-radius: 250px;
+}
+
+/* kartpunkter */
+.map-text{
+    font-size: 10px;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.map-dot{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: red;
+    border-radius: 240px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.map-text:hover{
+    transform: scale(3);
+}
+
+.map-dot:hover ~ .map-text{
+    transform: scale(3);
+}
+
+#map-position-1{
+    position: absolute;
+    left: 22%;
+    top: 50%;
+}
+
+#map-position-2{
+    position: absolute;
+    left: 47%;
+    top: 20%;
+}
+
+#map-position-3{
+    position: absolute;
+    left: 79%;
+    top: 68%;
+}
+
+/* Faktavinduer
+    - bruker flexbox for at innholdet skal tilpasse seg skjermstørrelse og zoom
+    */
+.flex-container{
+    position: absolute;
+    background: rgb(20, 86, 124);
+    display: none;
+    top: 5%;
+    left: 13%;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    width: 60%;
+    padding: 60px 20px 20px 20px;
+    box-shadow: 5px 5px;
+    min-width: 200px;
+}
+
+.flexbox{
+    background: whitesmoke;
+    border: black solid 2px;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+    min-width: 250px;
+    margin: 5px;
+}
+
+.column-1{
+    flex: 3;
+}
+
+.column-2{
+    flex: 2;
+}
+
+/* Bilde i faktavindu */
+.profile-img{
+    width: 100%;
+    border: solid black 1px;
+}
+
+/* radio box
+    - brukes for å trigge søskenelementer
+    - bruker tilhørende label som knapp for aktivering
+    - selve input-elementet er skjult
+    */
+input{
+    display: none;
+}
+
+#destination-1:checked ~ #window-1{
+    display: flex;
+}
+
+#destination-2:checked ~ #window-2{
+    display: flex;
+}
+
+#destination-3:checked ~ #window-3{
+    display: flex;
+}
+
+.window-btn{
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    border: white solid 2px;
+    border-radius: 20px;
+    text-align: center;
+    position: absolute;
+    padding: 10px;
+}
+
+.window-btn:hover{
+    border: rgb(20, 86, 124) solid 2px;
+    color:rgb(20, 86, 124);
+    background: white;   
+}
+
+.window-btn-1{
+
+    top: 10px;
+    right: 30px;
+}
+
+.window-btn-2{
+    top: 10px;
+    left: 30px;
+}

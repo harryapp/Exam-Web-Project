@@ -1,0 +1,319 @@
+
+.wrapper {
+    margin: 0%;
+    padding: 0%;
+    width: 100%;
+    height: 100%;
+    
+    top: 0%;
+    left: 0%;
+    
+    overflow: hidden;
+    position: absolute;
+} 
+
+/* et slags filter, gir en effekt av å være under vann */
+.water {
+    background: radial-gradient(rgb(0, 255, 255), rgb(0, 0, 139));
+    
+    filter: brightness(0.1);
+    
+    width: 100%;
+    height: 95%;
+    
+    margin: 0;
+    padding: 0;
+    
+    
+    top: 0;
+    left: 0;
+}
+
+/* boks for bildet som vises svakt i bakgrunnen og skattekiste */
+.ship-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    
+    margin: 0;
+    padding: 0;
+}
+
+/* bakgrunnsbilde, satt gjennomsiktig for ikke å overskygge vannet */
+#background {
+    opacity: 0.1;
+    
+    width: 100%;
+    height: 100%;
+    
+    margin: 0;
+    padding: 0;
+    
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+/* skattekiste, åpnes ved hover*/
+#treasure-chest-closed {
+    position: relative;
+    top: 81%;
+    left: 55%;
+    
+    width: 4%;
+    
+    filter: brightness(40%);
+    opacity: 0.8;
+    
+    z-index: 1;
+}
+
+#treasure-chest-closed:hover {
+    opacity: 0;
+}
+
+#treasure-chest {
+    position: relative;
+    top: 81%;
+    left: 50%;
+    
+    width: 5%;
+    
+    filter: brightness(45%);
+    opacity: 0;
+}
+
+#treasure-chest-closed:hover+#treasure-chest {
+    opacity: 0.8;
+}
+
+
+/* boks for haien og teksten */
+.shark-container {
+    position: absolute;
+    top: 40%;
+    right: -15%;
+    
+    width: 15%;
+    height: 20%;
+    margin: 0px;
+    
+    color: rgba(0,0,0,0);
+    
+    
+    animation-name: swimming;
+    animation-iteration-count: infinite;
+    animation-duration: 10000ms;
+    animation-timing-function: linear;
+}
+
+/* boksen beveger seg over skjermen */
+@keyframes swimming {
+    0% {
+        top: 40%;
+        right: -15%;
+    }
+    100% {
+        right: 100%;
+    }
+}
+
+/* stopp og viser tekst ved hover */
+.shark-container:hover {
+    color: rgba(0,0,0,1);
+    animation-play-state: paused;
+}
+
+.shark-container:hover #shark {
+    animation-play-state: paused;
+}
+
+/* haien, med en egen animasjon inne i boksen */
+#shark {
+    width: 80%; 
+    top: 10%;
+    position: relative;
+    filter: brightness(15%);
+    
+    animation-name: shark-animation;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+    animation-duration: 10000ms;
+}
+
+@keyframes shark-animation {
+    0% {
+        filter: brightness(15%);
+    }
+
+    20% {
+        transform: skew(12deg);   
+    }
+
+    40% {
+        filter: brightness(50%);
+        transform: skew(0deg);
+    }
+
+    60% {
+        filter: brightness(50%);
+        transform: skew(12deg);
+    }
+    80% {
+        transform: skew(0deg);
+    }
+    90% {
+    }
+    100% {
+        filter: brightness(15%);
+        transform: skew(12deg);
+    }
+}
+
+
+/* design for tak og dashboard */
+.submarine {
+    background: radial-gradient(rgb(255, 255, 255), rgb(128, 128, 128), rgb(0, 0, 0));
+    
+    margin: 0%;
+    
+    width: 100%;
+    
+    z-index: 1;
+}
+
+/* for forskjeller ved øvre og nedre dashboard */
+#dash-top {
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    
+    height: 10%;
+    
+    box-shadow: inset 0 -7px 9px -7px;
+    
+    border-bottom-left-radius: 35%;
+    border-bottom-right-radius: 35%;
+}
+
+/* dashboardet vises fullstendig når det blir hovret(?) over */
+#dash-bottom {
+    position: absolute;
+    top: 90%;
+    left: 0%;
+    
+    border-top: 4px solid rgb(0, 0, 0);
+    
+    height: 20%;
+    
+    border-top-right-radius: 20%;
+    border-top-left-radius: 20%;
+    
+    transition: 800ms;
+}
+
+#dash-bottom:hover {
+    top: 80%;
+} 
+
+/* knappen som linker tilbake til båten */
+#up-btn {
+    text-align: center;
+    color: black;
+    background-color: rgb(240, 240, 0);
+    
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 25%;
+    
+    width: 5%;
+    
+    padding: 1%;
+    
+    position: absolute;
+    left: 30%;
+    top: 25%;
+    
+    text-decoration: none;
+}
+
+#up-btn:hover {
+    box-shadow: inset 0 -7px 9px -7px;
+}
+
+#sonar {
+    position: absolute;
+    top: 18%;
+    left: 64%;
+    
+    width: 7%;
+}
+
+#steering-wheel {
+    position: absolute;
+    top: -35%;
+    left: 44.5%;
+    
+    width: 11%;
+}
+
+
+/* knappene for lys */
+.buttons {
+    color: rgb(0, 0, 0);
+    
+    border-radius: 40%;
+    
+    width: 7%;
+    padding: 0.5%;
+    
+    cursor: pointer;
+    
+    font-family: serif;
+    font-weight: 900;
+    
+    position: absolute;
+    top: 3%;
+    transition-duration: 400ms;
+    
+    z-index: 7;
+}
+
+.buttons:hover {
+    box-shadow: inset 0 -5px 7px -5px;
+}
+
+.buttons:focus {
+    outline: none;
+    border: 2px solid rgb(200, 200, 0);
+}
+
+
+#light-btn {
+    background-color: rgb(0, 255, 50);
+    left: 37%;
+}
+
+
+#light-off-btn {
+    background-color: rgb(255, 0, 0);
+    left: 56%;
+}
+
+/* "lys på"-knappen kjører en animasjon for vannet ved :fokus */
+#light-btn:focus+.water {
+    animation-name: lighten-up;
+    animation-duration: 3000ms;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+} 
+
+@keyframes lighten-up {
+    0% {
+        filter: brightness(0.1);
+    } 
+    100% {
+        filter: brightness(1);
+    }
+} 
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="nb">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Det Indiske Hav</title>
+        <link href="indiske-hav.css" rel="stylesheet">
+        <link href="style.mini-map.css" rel="stylesheet">
+        
+    </head>
+    <body>
+
+        <div id="container"> <!-- MainContainer -->
+                <!-- IntroduksjonsText -->
+            <h1>Det Indiske Hav / Indiahavet</h1>
+            <h2>Du befinner deg nå på vestkysten av Australia,</h2>
+            <h2>og skal få oppleve noe helt unikt!</h2>    
+            
+            <!-- Her ligger mini-kartet som er øverst til høyre på siden -->
+            <nav class="mini-map">
+                <div class="nav-container">
+                    <img class="mini-map-img" src="img/world-map.png" alt="">
+                    <a href="stillehavet.html" class="node" id="node-position1">Stillehavet</a>
+                    <a href="atlanterhavet.html" class="node" id="node-position2">Atlanterhavet</a>
+                    <a href="IndiskeHav.html" class="node" id="node-position3">Du er her</a>
+                    <a href="index.html" id="node-position-home" class="node">Hovedsiden</a>
+                </div>
+            </nav>
+            
+            <!-- HIMMELEN -->
+            <div id="sun"></div>
+            <img src="img/skies.png" id="skies-img" alt="">
+            <img src="img/skies.png" id="skies-img2" alt="">
+            <img src="img/skies.png" id="skies-img3" alt="">
+            
+            <!-- BILDENE AV BÅTEN OG UBÅTEN -->
+            <img src="img/boat.png" id="boat-img" alt="">
+
+            <!-- DE BLÅ FISKENE -->
+            <img src="img/cartoon-fish.png" id="fish-img" alt="">
+            <img src="img/cartoon-fish.png" id="fish-img2" alt="">
+            
+            <!-- Klovnefiskene -->
+            <img src="img/goldfish.png" id="goldfish-img" alt="">
+            <img src="img/goldfish.png" id="goldfish-img2" alt="">
+            <img src="img/goldfish.png" id="goldfish-img3" alt="">
+            <img src="img/goldfish.png" id="goldfish-img4" alt="">
+            
+            <div id="space"> <!-- hatchContainer, dette er luken som kommer under båten, i tillegg til bildet av ubåten og link til neste side -->
+                <label for="activate">Klikk her for å starte:</label>
+                <input type="checkbox" id="activate" name="hatch">
+                <div class="door-left door"></div>
+                <div class="door-right door"></div>
+                <img src="img/submarine.png" id="submarine" alt="">
+                <a href="indiske-hav-2.html" id="next-page">
+                    Trykk her for å gå videre
+                </a>
+            </div> <!-- end hatchContainer --> 
+            
+        </div> <!-- end MainContainer -->
+        
+    </body>
+</html>
